@@ -7,7 +7,14 @@
 		if (window.DeviceMotionEvent) {
 			window.addEventListener('devicemotion',function(ev){
 				var msg = ev.accelerationIncludingGravity;
-				document.write('x轴:'+msg.x+'y轴:'+msg.y)
+				var lastX = msg.x;
+				var lastY = msg.y;
+				var lastZ = msg.z;
+				setInterval(function(){
+					if (Math.abs(msg.x - lastX) > 20) {
+						alert('yaole')
+					};
+				},500)
 			},false)
 		} else{	
 			alert('不支持');
