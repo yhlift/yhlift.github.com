@@ -4,17 +4,23 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script>
+		function rnd(n,m){
+			return Math.parseInt(Math.random()*(m-n)+n)
+		}
 		if (window.DeviceMotionEvent) {
 			window.addEventListener('devicemotion',function(ev){
 				var msg = ev.accelerationIncludingGravity;
 				var lastX = msg.x;
 				var lastY = msg.y;
 				var lastZ = msg.z;
-				setInterval(function(){
-					if (Math.abs(msg.x - lastX) > 20) {
-						alert('yaole')
+				setTimeout(function(){
+					if (Math.abs(msg.x - lastX) > 20 || Math.abs(msg.y - lastY) > 20 ||Math.abs(msg.z - lastZ) > 20) {
+						document.getElementById('box').style.background = 'rgba('+rnd(0,255)+','+rnd(0,255)+','+rnd(0,255)+')'
 					};
-				},500)
+					lastX = msg.x;
+					lastY = msg.y;
+					lastZ = msg.z;
+				},100)
 			},false)
 		} else{	
 			alert('不支持');
@@ -22,6 +28,6 @@
 	</script>
 </head>
 <body>
-	
+	<div id="box"></div>
 </body>
 </html>
