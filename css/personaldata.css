@@ -18,7 +18,7 @@ h3{
 	font-weight: normal;
 }
 p{
-	font-size: 10px;
+	font-size: 12px;
 }
 .clearfix:after{display: block;content: '';clear: both;}
 .clearfix{zoom: 1;}
@@ -157,6 +157,7 @@ p{
 }
 .job span{
 	padding-top: 5px;
+	font-size: 14px;
 }
 .job .web,span{
 	float: left;
@@ -166,6 +167,9 @@ p{
 }
 .study h3{
 	font-size: 18px;
+}
+.study p{
+	font-size: 14px;
 }
 .study .udl{
 	border-top: 2px solid #f19149;
