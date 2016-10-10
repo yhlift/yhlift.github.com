@@ -43,7 +43,7 @@ p{
 	width: 114px;
 	height: 114px;
 	border-radius: 50%;
-	background: url(../img/666.jpg) no-repeat -3px -16px;
+	background: red;
 	position: absolute;
 	left: 50%;
 	top: 50%;
