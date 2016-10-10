@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		if (window.DeviceMotionEvent) {
+			window.addEventListener('devicemotion',function(ev){
+				var msg = ev.accelerationIncludingGravity;
+				document.write('x轴:'+msg.x+'y轴:'+msg.y)
+			},false)
+		} else{	
+			alert('不支持');
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
