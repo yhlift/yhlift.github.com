@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		if (navigator.geolocation) {
+			navigator.geolocation.watchPosition(function(ev){
+				var msg = ev.coords;
+				for(var name in msg){
+					document.write(name+':'+msg[name]+'<br>');
+				}
+			},function(){
+				alert('失败')
+			})
+		}else{
+			alert('不支持');
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
