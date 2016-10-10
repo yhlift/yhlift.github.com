@@ -12,14 +12,14 @@
 	</style>
 	<script>
 		function rnd(n,m){
-			return Math.parseInt(Math.random()*(m-n)+n)
+			return parseInt(Math.random()*(m-n)+n)
 		}
 		if (window.DeviceMotionEvent) {
+				var lastX = 0;
+				var lastY = 0;
+				var lastZ = 0;
 			window.addEventListener('devicemotion',function(ev){
 				var msg = ev.accelerationIncludingGravity;
-				var lastX = msg.x;
-				var lastY = msg.y;
-				var lastZ = msg.z;
 				setTimeout(function(){
 					if (Math.abs(msg.x - lastX) > 20 || Math.abs(msg.y - lastY) > 20 ||Math.abs(msg.z - lastZ) > 20) {
 						document.getElementById('box').style.background = 'rgba('+rnd(0,255)+','+rnd(0,255)+','+rnd(0,255)+')'
