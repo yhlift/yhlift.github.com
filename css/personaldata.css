@@ -1,0 +1,179 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: '微软雅黑';
+	color: #fff;
+}
+ul,li,p,h3{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+h3{
+	font-size: 14px;
+	font-weight: normal;
+}
+p{
+	font-size: 10px;
+}
+.clearfix:after{display: block;content: '';clear: both;}
+.clearfix{zoom: 1;}
+.content{
+	width: 100%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+.content .left-box{
+	width: 35%;
+	float: left;
+}
+.left-box .icon{
+	width: 100%;
+	height: 190px;
+	text-align: center;
+	line-height: 250px;
+	position: relative;
+}
+.left-box .icon .headp{
+	width: 114px;
+	height: 114px;
+	border-radius: 50%;
+	background: url(../img/666.jpg) no-repeat -3px -16px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -67px;
+	margin-top: -67px;
+	box-shadow: 10px 0px 5px #888888;
+}
+.person .mes{
+	width: 100%;
+	float: left;
+}
+.mes li{
+	width: 100%;
+}
+.mes li .menu{
+	width: 100%-30px;
+	height: 28px;
+	background: #f19149;
+	padding-left: 30px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 10px 5px #888888;
+}
+.menu p{
+	display: block;
+	margin-top:-6px;
+}
+.mat{
+	overflow: hidden;
+}
+.mat p{
+	font-size: 14px;
+	height: 24px;	
+	color: #010101;
+	margin-bottom: 14px;
+	padding-left: 40px;
+}
+.mat i{
+	display: block;
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-right: 16px;
+}
+.mat .add i{
+	background: url(../img/123.png) no-repeat 0 0;
+}
+.mat .qq i{
+	background: url(../img/456.png) no-repeat 0 0;
+}
+.mat .pho i{
+	background: url(../img/789.png) no-repeat 0 0;
+}
+.mat span,.last span{
+	color: #f19149;
+}
+.mat.last{
+	margin-bottom: 24px;
+	overflow: hidden;
+}
+.last ul{
+	width: 100%;
+	height: 36px;
+}
+.last ul li{
+	width: 36px;
+	color: #010101;
+	float: left;
+	margin-left: 30px;
+}
+
+.right-box{
+	width: 65%;
+	height: 760px;
+	float: right;
+	background: #1d2d32;
+}
+.right-content{
+	width: 100%-30px;
+	padding:30px 0 0 40px;
+}
+.name p{
+	font-size: 14px;
+}
+.name h3{
+	font-size: 26px;
+	letter-spacing: 0.5em;
+	margin-bottom: 26px;
+}
+.name .udl{
+	border-top: 2px solid #fff;
+	width: 66px;
+}
+.job{
+	margin-top: 16px;
+	margin-bottom: 40px;
+}
+.job .web{
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: #f19149;
+	color: #fff;
+	text-align: center;
+	line-height: 28px;
+	margin-right: 20px;
+}
+.job span{
+	padding-top: 5px;
+}
+.job .web,span{
+	float: left;
+}
+.study{
+	margin-bottom: 30px;
+}
+.study h3{
+	font-size: 18px;
+}
+.study .udl{
+	border-top: 2px solid #f19149;
+	width: 66px;
+}
+.study .school{
+	margin-top: 36px;
+	font-size: 14px;
+}
+.study li{
+	float: left;
+	margin-right: 80px;
+}
+.study li p{
+	line-height: 30px;
+}
