@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>document</title>
+<style>
+	#allmap{
+		width:100%;
+		height:500px;
+	}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TkozfXawf2FdSWRONUTR4pISMBu2pBdj"></script>
+<script>
+window.onload=function(){
+	navigator.geolocation.getCurrentPosition(function(ev){
+		var msg=ev.coords;
+		var longitude=msg.longitude+0.1;
+		var latitude=msg.latitude-0.13;
+
+		var map = new BMap.Map("allmap");
+		
+		var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true},policy: 'BMAP_DRIVING_POLICY_LEAST_TIME'});
+		driving.search('荣京东街','天安门');
+		
+		map.enableScrollWheelZoom(true); 
+	},function(ev){
+		alert('shibai')
+	})
+
+};
+</script>
+</head>
+<body>
+<div id="allmap"></div>
+</body>
+</html>
