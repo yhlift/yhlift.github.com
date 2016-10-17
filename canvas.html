@@ -87,7 +87,7 @@
 			function drawTail(){
 				for (var i = 0; i < arrLine.length; i++) {
 					gd.beginPath();
-					gd.strokeStyle = 'rgba('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+','+i/arrLine.length+')';
+					gd.strokeStyle = 'rgba(255,255,255,'+i/arrLine.length+')';
 					for(var j = 0; j < arrLine[i].length;j++){
 						gd.lineTo(arrLine[i][j].x,arrLine[i][j].y)
 					}
