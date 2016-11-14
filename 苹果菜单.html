@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mac菜单</title>
+<style>
+*{ margin:0; padding:0; }
+div{ position:absolute; left:0; bottom:0; width:100%; text-align:center; }
+div img{ width:64px; }
+</style>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var aImg=oBox.children;
+	var aTxt=document.getElementsByTagName('input');
+	
+	document.onmousemove=function (ev){
+		var oEvent=ev||event;
+		for(var i=0; i<aImg.length; i++){
+			var a=aImg[i].getBoundingClientRect().left+aImg[i].offsetWidth/2-oEvent.clientX;
+			var b=aImg[i].getBoundingClientRect().top+aImg[i].offsetHeight/2-oEvent.clientY;
+			
+			var dis=Math.sqrt(a*a+b*b);
+			var scale=1-dis/500;
+			//以下代码和本程序无关只是看看
+			aTxt[i].value=scale;
+			//end
+			if(scale<0.5)scale=0.5;
+			aImg[i].style.width=scale*128+'px';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<input type="text" value="" />
+	<input type="text" value="" />
+	<input type="text" value="" />
+	<input type="text" value="" />
+	<input type="text" value="" />
+	<div id="box">
+    	<img src="images/img3/1.png" alt="" />
+    	<img src="images/img3/2.png" alt="" />
+    	<img src="images/img3/3.png" alt="" />
+    	<img src="images/img3/4.png" alt="" />
+    	<img src="images/img3/5.png" alt="" />
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

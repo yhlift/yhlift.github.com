@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝幻灯片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            background: #000;
+        }
+        #box {
+            width: 534px;
+            height: 320px;
+            position: relative;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #box ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #box ul li {
+            width:534px;
+            height: 320px;
+            float: left;
+        }
+        #box ul li img {
+            width:534px;
+            height: 320px;
+        }
+        #box ol {
+            position: absolute;
+            width: 120px;
+            left: 50%;
+            margin-left: -60px;
+            bottom: 10px;
+        }
+        #box ol li {
+            width: 20px;
+            height: 20px;
+            background: #f60;
+            float: left;
+            margin: 2px;
+            border-radius: 50%;
+        }
+        #box ol li.active {
+            background: #fff;
+        }
+        #box .prev, #box .next {
+            z-index: 2;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0,0,0,0.4);
+            line-height: 80px;
+            text-align: center;
+            top: 50%;
+            margin-top: -40px;
+            transition: -0.4s all ease;
+            opacity: 0;
+        }
+        #box .prev {
+            left: 0;
+        }
+        #box .next {
+            right: 0;
+        }
+        #box a:hover {
+            background: rgba(255,0,0,0.4);
+        }
+    </style>
+    <script src="js/move_all.js"></script>
+    <script>
+        window.onload = function() {
+            var oBox = document.getElementById('box');
+            var oPrev = oBox.children[0];
+            var oNext = oBox.children[1];
+            var oUl = oBox.children[2];
+            var oOl = oBox.children[3];
+            var aLi = oUl.children;
+            var aBtn = oOl.children;
+            var iNow = 0;
+
+            oBox.onmouseover = function() {
+                move(oPrev, {opacity: 1});
+                move(oNext, {opacity: 1});
+            };
+            oBox.onmouseout = function() {
+                move(oPrev, {opacity: 0});
+                move(oNext, {opacity: 0});
+            };
+
+            // 复制一份内容
+            oUl.innerHTML += oUl.innerHTML;
+            // 重新计算宽度
+            oUl.style.width = aLi[0].offsetWidth*aLi.length + 'px';
+
+            oPrev.onclick = function() {
+                iNow--;
+                tab();
+            };
+
+            // 下一个
+            oNext.onclick = function() {
+                iNow++;
+                tab();
+            };
+
+            // 选项卡
+            for (var i = 0; i < aBtn.length; i++) {
+                (function(index){
+                    aBtn[i].onclick = function() {
+                        // 清空所有
+                        iNow = Math.floor(iNow/aBtn.length)*aBtn.length + index;
+                        tab();
+                    };
+                })(i);
+            }
+
+            function tab() {
+                for (var i = 0; i < aBtn.length; i++) {
+                    aBtn[i].className = '';
+                }
+                aBtn[iNow%aBtn.length].className = 'active';
+                
+                startMove(oUl,-iNow*aLi[0].offsetWidth);
+            }
+
+            var left = 0;
+            var timer = null;
+            var W = oUl.offsetWidth/2;
+            function startMove(obj,iTarget) {
+                clearInterval(timer);
+                var start = left; // 起点
+                var dis = iTarget - start; // 总距离
+                var count = Math.floor(700/30);// 总次数
+
+                var n = 0; // 当前走了几次了
+                timer = setInterval(function() {
+                    n++;
+                    var a = 1-n/count;
+                    left = start + dis*(1-Math.pow(a,3));
+                    if (left < 0) {
+                        obj.style.left = left%W + 'px';
+                    } else {
+                        obj.style.left = (left%W-W)%W + 'px';
+                    }
+                    if (n == count) {
+                        clearInterval(timer);
+                    }
+                },30);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <a href="javascript:;" class="prev">prev</a>
+        <a href="javascript:;" class="next">next</a>
+        <ul>
+            <li><a href="javascript:;"><img src="images/tab/0.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/tab/1.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/tab/2.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/tab/3.jpg" alt=""></a></li>
+        </ul>
+        <ol>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>

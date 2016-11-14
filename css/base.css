@@ -1,9 +1,72 @@
-body{color:#333;background:#edebeb;padding:0;margin:0;position:relative;}
-body,th,td,.p1,.p2{font-family:arial}
-p,form,ol,ul,li,dl,dt,dd{margin:0;padding:0;list-style:none}
-input{padding-top:0;padding-bottom:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
-table,img{border:0}
-td{font-size:9pt;line-height:18px}
-a em{text-decoration:none;color: #666}
-.clearfix:after{display: block;content: '';clear: both;}
-.clearfix{zoom: 1;}
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li,
+ol li {
+    list-style: none;
+}
+
+i,
+em {
+    font-style: normal;
+}
+img {
+    border: none 0;
+}
+/*img {
+    display: block;vertical-align: top;
+}*/
+
+/*        a标签包img出现bug，用此解决*/
+
+/*input{ outline:none; border:none; background:none;}
+input,textarea,select{ margin:0; }
+input,textarea{ padding:0;}
+input::-ms-clear{display:none;}*/
+
+input {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+b,
+strong,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 12px;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+/*        清除浮动；zoom是为了兼容*/
+
+
+/*
+        filter: alpha(opacity= 50);
+        opacity: 0.5;
+        透明设置
+*/
+html,
+body {
+    width: 100%;
+}
