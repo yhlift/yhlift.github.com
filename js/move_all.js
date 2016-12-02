@@ -1,5 +1,5 @@
 /**
- * Created by ZhuWQ on 2016/8/22.
+ * Created by YangH on 2016/8/22.
  */
 function getStyle(obj,name) {
     return (obj.currentStyle || getComputedStyle(obj,false))[name];

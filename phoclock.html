@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 200px;
+			height: 35px;
+			margin:100px auto;
+		}
+		ul li{
+			width: 24px;
+			height: 35px;
+			overflow: hidden;
+			float: left;
+			font-size: 25px;
+			line-height: 35px;
+			text-align: center;
+			position: relative;
+		}
+		ul li img{
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+	</style>
+</head>
+<script src="js/move_all.js"></script>
+<body>
+	<ul>
+		<li><img src="images/num.png" alt=""></li>
+		<li><img src="images/num.png" alt=""></li>
+		<li>:</li>
+		<li><img src="images/num.png" alt=""></li>
+		<li><img src="images/num.png" alt=""></li>
+		<li>:</li>
+		<li><img src="images/num.png" alt=""></li>
+		<li><img src="images/num.png" alt=""></li>
+	</ul>
+	<script>
+		var oUl = document.body.children[0];
+		var aImg = oUl.getElementsByTagName('img');
+		function toDou(n){
+			return n < 10 ? '0' + n : '' + n;
+		}
+		function clock(){
+			var oDate = new Date();
+			var H = oDate.getHours();
+			var M = oDate.getMinutes();
+			var S = oDate.getSeconds();
+			var str = toDou(H)+toDou(M)+toDou(S);			
+			for (var i = 0; i < aImg.length; i++) {
+				// aImg[i].style.top = -35*str.charAt(i) + 'px';
+				move(aImg[i],{top:-35*str.charAt(i)},{easing:'ease-in'});
+			};
+		}
+		clock();
+		setInterval(clock,1000);
+	</script>
+</body>
+</html>

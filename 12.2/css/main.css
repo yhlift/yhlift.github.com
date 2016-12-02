@@ -1,0 +1,169 @@
+@charset "utf-8";
+html {
+	font-size: 40px;
+}
+html, body {
+	overflow-x: hidden;
+}
+img {
+	width: 100%;
+	height: 100%;
+}
+.warp {
+	width: 16rem;
+	margin: 0 auto;
+}
+.header {
+	height: 1.9rem;
+	background: #040404;
+}
+.header .logo {
+	width: 1rem;
+	height: 0.75rem;
+	transform: translate(1.15rem, 0.575rem);
+}
+.header .head_top {
+	color: #fff;
+	font-size: 0.7rem;
+	transform: translateX(6.5rem);
+	line-height: 100%;
+}
+.banner {
+	height: 17rem;
+	background: url(../img/banner.jpg) no-repeat;
+	background-size: contain;
+}
+.banner .ban_font {
+	color: #fff;
+}
+.banner .ban_font .p1 {
+	font-size: 0.75rem;
+	transform: translate(1.5rem, 10.125rem);
+}
+.banner .ban_font .p2 span {
+	float: left;
+	line-height: 1.8rem;
+	background: rgba(255,0,0,.8);
+	font-size: 1.375rem;
+	width: 6.65rem;
+	height: 1.8rem;
+	display: block;
+	text-align: center;
+}
+.banner .ban_font .p2 {
+	height: 1.8rem;
+	font-size: 1.5rem;
+	line-height: 100%;
+	transform: translate(1.5rem, 10.575rem)
+}
+.content .con1 {
+	margin-top: 1.75rem;
+}
+.content .con1 h3 {
+	font-size: 1rem;
+	margin-left: 1.175rem;
+}
+.content .con1 h3 .sp1 {
+	color: #e8162c;
+}
+.content .con1 h3 .sp2 {
+	font-weight: bold;
+	margin-left: 1rem;
+}
+.content .con1 p {
+	font-size: 0.6rem;
+	line-height: 1rem;
+	margin-left: 3.2rem;
+	padding-top: 0.8rem;
+	padding-bottom: 1rem;
+	width: 10.25rem;
+	position: relative;
+}
+.content .con1 p .top_line {
+	width: 1.85rem;
+	height: 0.175rem;
+	background: #fe0000;
+	position: absolute;
+	top: 0.4rem;
+	left: 0;
+}
+/*中间轮播图*/
+.content .swiper {
+	height: 8.5rem;
+	background: #fafafa;
+	text-align: center;
+	margin-top: 1.65rem;
+	position: relative;
+}
+.content .swiper img {
+	width: 1.875rem;
+	height: 1.875rem;
+}
+.content .swiper ul {
+	width: 38rem;
+	height: 8.5rem;
+	position: absolute;
+	top: 25%;
+	left: 0;
+}
+.content .swiper li {
+	float: left;
+	width: 5.34rem;
+}
+.warp .content .con3 {
+	background: #29282e;
+	color: #fff;
+	padding-top: 1rem;
+}
+.warp .content .con3 p {
+	color: #fff;
+}
+.warp .content .con3 h3 .sp1 {
+	color: #fff;
+}
+.warp .content .con3 p .top_line {
+	background: #fff;
+}
+.warp .content .con3 .media {
+	width: 13.675rem;
+	background: #ccc;
+	margin-left: 1rem;
+	margin-bottom: 1.2rem;
+}
+/*百度API*/
+.content .con1 .baidu_API {
+	height: 5.125rem;
+	background: #ccc;
+}
+.content .footer {
+	height: 2.875rem;
+	text-align: center;
+	line-height: 2.875rem;
+	font-size: 0.5rem;
+	color: #ccc;
+}
+/*遮罩层*/
+#cover {
+	display: none;
+	color: #fff;
+	width: 14rem;
+	position: fixed;
+	top: 1.9rem;
+	left: 0;
+	background: rgba(0,0,0,.7);
+	padding: 1rem;
+	z-index: 99;
+	text-align: center;
+}
+#cover p {
+	border-bottom: 0.05rem solid #fff;
+	width: 10rem;
+	margin:0 auto;
+}
+#cover a {
+	color: #fff;
+	font-size: 1rem;
+}
+#close a{ color:#fff;}
+
+
